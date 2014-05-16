@@ -23,7 +23,7 @@ import android.util.Log;
 public class InstallGapps extends Activity {
 
 	// Progress Dialog
-	private ProgressDialog pDialog;
+	private ProgressDialog pDialog, pDialog1;
 
 	// Progress dialog type (0 - for Horizontal progress bar)
 	public static final int progress_bar_type = 0;
@@ -36,10 +36,10 @@ public class InstallGapps extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		File f = new File(Environment.getExternalStorageDirectory().getPath()+"gapps.zip");
+		File f = new File(Environment.getExternalStorageDirectory().getPath()+"/gapps.zip");
 		if (f.exists() && !f.isDirectory()) {
 
-			File cachedFile = new File(Environment.getExternalStorageDirectory().getPath()+"gapps.zip");
+			File cachedFile = new File(Environment.getExternalStorageDirectory().getPath()+"/gapps.zip");
 			try {
 				RecoverySystem.installPackage(getApplicationContext(),
 						cachedFile);
@@ -107,7 +107,7 @@ public class InstallGapps extends Activity {
 						8192);
 
 				// Output stream to write file
-				OutputStream output = new FileOutputStream(Environment.getExternalStorageDirectory().getPath()+"gapps.zip");
+				OutputStream output = new FileOutputStream(Environment.getExternalStorageDirectory().getPath()+"/gapps.zip");
 
 				byte data[] = new byte[1024];
 
@@ -154,7 +154,7 @@ public class InstallGapps extends Activity {
 			// dismiss the dialog after the file was downloaded
 			dismissDialog(progress_bar_type);
 
-			File cachedFile = new File(Environment.getExternalStorageDirectory().getPath()+"gapps.zip");
+			File cachedFile = new File(Environment.getExternalStorageDirectory().getPath()+"/gapps.zip");
 			try {
 				RecoverySystem.installPackage(getApplicationContext(),
 						cachedFile);
