@@ -29,7 +29,7 @@ public class InstallGapps extends Activity {
 	public static final int progress_bar_type = 0;
 
 	// File url to download
-	private static String file_url = "http://www.broodplank.net/files/gapps-4.4.2-lite-with-supersu-1.94.zip";
+	private static String file_url = "http://www.broodplank.net/files/gapps_and_root.zip";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
